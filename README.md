@@ -86,6 +86,15 @@ It'll return null if the image type isnt supported, otherwise it'll return the i
 ## ImageResultFloat
 ImageResultFloat class is similar to ImageResult, but stores data as array of float rathen than bytes. It is used to load HDR files.
 
+## Animated Gifs
+It is possible to load all frames of an animated gif along with its delays using following code:
+```c#
+    foreach(AnimatedFrameResult frame in ImageResult.AnimatedGifFramesFromStream(stream))
+    {
+        // Do something with a frame
+    }
+```
+
 # Who uses StbImageSharp?
 [MonoGame](http://www.monogame.net/)
 
@@ -96,7 +105,7 @@ There is special app to measure reliability & performance of StbImageSharp in co
 
 It goes through every image file in the specified folder and tries to load it 10 times with StbImageSharp, then 10 times with C++/CLI wrapper over the original stb_image.h(Stb.Native). Then it compares whether the results are byte-wise similar and also calculates loading times. Also it sums up and reports loading times for each method.
 
-Moreover SixLabor ImageSharp 1.0.0 is included in the testing too.
+Moreover SixLabor ImageSharp 1.0.4 is included in the testing too.
 
 I've used it over following set of images: https://github.com/StbSharp/TestImages
 
@@ -104,11 +113,11 @@ The byte-wise comprarison results are similar for StbImageSharp and Stb.Native.
 
 And performance comparison results are(times are total loading times):
 ```
-14 -- StbImageSharp - jpg: 2307 ms, tga: 403 ms, bmp: 38 ms, psd: 1 ms, png: 11347 ms, Total: 14096 ms
-14 -- Stb.Native - jpg: 922 ms, tga: 394 ms, bmp: 18 ms, psd: 0 ms, png: 10812 ms, Total: 12146 ms
-14 -- ImageSharp - jpg: 23209 ms, bmp: 13 ms, png: 11680 ms, Total: 34902 ms
-14 -- Total files processed - jpg: 170, tga: 41, bmp: 7, psd: 1, png: 568, Total: 787
-14 -- StbImageSharp/Stb.Native matches/processed - 787/787
+3 -- StbImageSharp - bmp: 34 ms, tga: 499 ms, png: 12028 ms, jpg: 2005 ms, psd: 0 ms, Total: 14566 ms
+3 -- Stb.Native - bmp: 23 ms, tga: 401 ms, png: 10271 ms, jpg: 1419 ms, psd: 0 ms, Total: 12114 ms
+3 -- ImageSharp - bmp: 24 ms, png: 10253 ms, jpg: 1782 ms, Total: 12059 ms
+3 -- Total files processed - bmp: 7, tga: 41, png: 568, jpg: 170, psd: 1, Total: 787
+3 -- StbImageSharp/Stb.Native matches/processed - 787/787
 ```
 
 # License

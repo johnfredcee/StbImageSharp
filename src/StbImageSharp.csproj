@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <Authors>StbImageSharpTeam</Authors>
-    <Product>StbImageSharp</Product>
-    <PackageId>StbImageSharp</PackageId>
-    <TargetFrameworks>netstandard2.1</TargetFrameworks>
-    <Description>C# port of the stb_image.h</Description>
-    <PackageLicenseUrl>Public Domain</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/StbSharp/StbImageSharp</PackageProjectUrl>
-    <Version>2.22.5</Version>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  
-  <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
+    <PropertyGroup>
+        <Authors>StbImageSharpTeam</Authors>
+        <Product>StbImageSharp</Product>
+        <PackageId>StbImageSharp</PackageId>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>
+        <Description>C# port of the stb_image.h</Description>
+        <PackageLicenseUrl>Public Domain</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/StbSharp/StbImageSharp</PackageProjectUrl>
+        <Version>2.27.8</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
 </Project>

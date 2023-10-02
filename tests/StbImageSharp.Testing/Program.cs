@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Hebron.Runtime;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.PixelFormats;
@@ -245,6 +246,8 @@ namespace StbImageSharp.Testing
 
 				stbImageSharpTotal.Add(extension, stbImageSharpResult.TimeInMs);
 				stbNativeTotal.Add(extension, stbNativeResult.TimeInMs);
+
+				GC.Collect();
 			}
 			catch (Exception ex)
 			{
